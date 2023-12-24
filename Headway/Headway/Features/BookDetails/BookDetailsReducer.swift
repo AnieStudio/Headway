@@ -19,9 +19,7 @@ struct BookDetailsReducer: Reducer {
     
     private enum CancelID {
         case play
-        case pause
         case timer
-        case updateProgress
     }
     
     struct State: Equatable {
@@ -53,7 +51,6 @@ struct BookDetailsReducer: Reducer {
         struct AudioInfoState: Equatable {
             var currentTime: TimeInterval = 0
             var totalDuration: TimeInterval = 0
-            var currentSliderValue: Float = 0
             var currentPlaybackSpeed: AudioPlayerClient.PlaybackSpeed = .normal
             var sliderStep: ClosedRange<Float> = 0...1
             
@@ -62,14 +59,14 @@ struct BookDetailsReducer: Reducer {
             }
             
             var sliderValue: Double {
-                   get {
-                       guard totalDuration > 0 else { return 0 }
-                       return currentTime / totalDuration
-                   }
-                   set {
-                       currentTime = newValue * totalDuration
-                   }
-               }
+                get {
+                    guard totalDuration > 0 else { return 0 }
+                    return currentTime / totalDuration
+                }
+                set {
+                    currentTime = newValue * totalDuration
+                }
+            }
             
             var currentPlaybackSpeedIndex: Int {
                 AudioPlayerClient.PlaybackSpeed.allCases.firstIndex(of: currentPlaybackSpeed) ?? 2
@@ -95,12 +92,10 @@ struct BookDetailsReducer: Reducer {
         
         enum TimeAction: Equatable {
             case start
-            case pause
         }
         
         enum AudioInfoAction: Equatable {
             case getTotalDuration(TimeInterval)
-            case didUpdateSliderValue(Float)
         }
         
         enum PlayerAction: Equatable {
@@ -163,12 +158,6 @@ struct BookDetailsReducer: Reducer {
                 case .pause:
                     state.playerState = .pause
                     return .merge(.cancel(id: CancelID.play), .cancel(id: CancelID.timer))
-//                    return .run(priority: .high) { [url = state.book.urls[state.currentAudioIndex]] send in
-//                        await send(.timerAction(.pause))
-//                        _ = try await audioPlayer.control(url, .pause)
-//                    }
-//                    .cancellable(id: CancelID.play, cancelInFlight: true)
-                    
                 case .back:
                     guard !state.isFirstAudio else { return .none }
                     
@@ -184,7 +173,6 @@ struct BookDetailsReducer: Reducer {
                     
                     state.currentAudioIndex -= 1
                     state.audioInfoState.currentTime = 0
-                    state.audioInfoState.currentSliderValue = 0.0
                     
                     if state.playerState == .playing {
                         effects.append(
@@ -209,8 +197,7 @@ struct BookDetailsReducer: Reducer {
                     
                     state.currentAudioIndex += 1
                     state.audioInfoState.currentTime = 0
-                    state.audioInfoState.currentSliderValue = 0.0
-                                        
+                    
                     if state.playerState == .playing {
                         effects.append(
                             .run { send in
@@ -242,7 +229,7 @@ struct BookDetailsReducer: Reducer {
                     }
                     return .merge(effects)
                 case .goForward10:
-                   guard state.audioInfoState.currentTime <= state.audioInfoState.totalDuration else { return .none }
+                    guard state.audioInfoState.currentTime <= state.audioInfoState.totalDuration else { return .none }
                     
                     if state.audioInfoState.currentTime >= (state.audioInfoState.totalDuration - 10) {
                         state.audioInfoState.currentTime = state.audioInfoState.totalDuration
@@ -291,7 +278,6 @@ struct BookDetailsReducer: Reducer {
                     
                     state.currentAudioIndex += 1
                     state.audioInfoState.currentTime = 0
-                    state.audioInfoState.currentSliderValue = 0.0
                     state.playerState = .pause
                     
                     let url = state.book.urls[state.currentAudioIndex]
@@ -341,17 +327,11 @@ struct BookDetailsReducer: Reducer {
                         }
                     }
                     .cancellable(id: CancelID.timer, cancelInFlight: true)
-                    
-                case .pause:
-                    return .cancel(id: CancelID.timer)
                 }
             case let .audioInfoAction(audioInfoAction):
                 switch audioInfoAction {
                 case let .getTotalDuration(duration):
                     state.audioInfoState.totalDuration = duration
-                    return .none
-                case let .didUpdateSliderValue(value):
-                    state.audioInfoState.currentSliderValue = value
                     return .none
                 }
             }

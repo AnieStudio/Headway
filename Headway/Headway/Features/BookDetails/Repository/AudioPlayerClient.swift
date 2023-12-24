@@ -11,7 +11,6 @@ import Dependencies
 extension AudioPlayerClient {
     enum Action: Equatable {
         case play(TimeInterval, PlaybackSpeed)
-        case pause
     }
     
     enum PlaybackSpeed: Float, CaseIterable {
@@ -65,8 +64,6 @@ extension AudioPlayerClient: DependencyKey {
                     print("---> Speed \(speed.rawValue)")
                     delegate.player.prepareToPlay()
                     delegate.player.play()
-                case .pause:
-                    delegate.player.pause()
                 }
                 continuation.onTermination = { _ in
                     delegate.player.stop()
