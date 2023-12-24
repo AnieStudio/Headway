@@ -73,7 +73,7 @@ extension AudioPlayerClient: DependencyKey {
             }
         }
         
-        return try await stream.dropFirst().first { _ in true } ?? false
+        return try await stream.first(where: { _ in true }) ?? false
     } totalDuration: { url in
         let delegate = try Delegate(url: url)
         

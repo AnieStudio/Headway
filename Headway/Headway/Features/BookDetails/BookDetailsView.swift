@@ -31,7 +31,7 @@ struct BookDetailsView: View {
                                     .padding(.top, screen.size.height * 0.03)
                                 
                                 VStack(spacing: 5) {
-                                    Text("KEY POINT \(viewStore.currentAudioIndex) OF \(viewStore.book.playlist.audio.count - 1)")
+                                    Text("KEY POINT \(viewStore.audioInfoState.currentAudioIndex) OF \(viewStore.book.playlist.audio.count - 1)")
                                         .font(.subheadline)
                                         .foregroundStyle(.gray)
                                         .bold()
@@ -52,8 +52,9 @@ struct BookDetailsView: View {
                                     .frame(width: screen.size.width * 0.1)
                                 
                                 Slider(
-                                    value: viewStore.binding(get: { Float($0.audioInfoState.sliderValue) }, send: BookDetailsReducer.Action.updateProgress),
-                                    in: viewStore.audioInfoState.sliderStep
+                                    value: viewStore.binding(get: { Float($0.audioInfoState.sliderValue) },
+                                                             send: BookDetailsReducer.Action.updateSliderProgress),
+                                    in: AudioInfoState.sliderStep
                                 )
                                 .progressViewStyle(.linear)
                                 .tint(.primaryBlue)

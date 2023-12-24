@@ -35,6 +35,12 @@
 		ED90EB662B38E04D00E26254 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB652B38E04D00E26254 /* Audio.swift */; };
 		ED90EB682B38E09F00E26254 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB672B38E09F00E26254 /* FileType.swift */; };
 		ED90EB6B2B38E14900E26254 /* TimeInterval+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB6A2B38E14900E26254 /* TimeInterval+Extensions.swift */; };
+		ED90EB702B38F12E00E26254 /* PlayerState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB6F2B38F12E00E26254 /* PlayerState.swift */; };
+		ED90EB722B38F1C300E26254 /* AudioInfoState+PlaybackSpeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB712B38F1C300E26254 /* AudioInfoState+PlaybackSpeed.swift */; };
+		ED90EB742B38F23000E26254 /* AudioInfoState+Slider.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB732B38F23000E26254 /* AudioInfoState+Slider.swift */; };
+		ED90EB762B38F31C00E26254 /* BookDetailsReducerState+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB752B38F31C00E26254 /* BookDetailsReducerState+Audio.swift */; };
+		ED90EB782B38F36700E26254 /* BookDetailsReducer+AudioInfoState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB772B38F36700E26254 /* BookDetailsReducer+AudioInfoState.swift */; };
+		ED90EB7A2B38F42000E26254 /* BookDetailsReducer+PlayerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB792B38F42000E26254 /* BookDetailsReducer+PlayerAction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +91,12 @@
 		ED90EB652B38E04D00E26254 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
 		ED90EB672B38E09F00E26254 /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
 		ED90EB6A2B38E14900E26254 /* TimeInterval+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extensions.swift"; sourceTree = "<group>"; };
+		ED90EB6F2B38F12E00E26254 /* PlayerState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerState.swift; sourceTree = "<group>"; };
+		ED90EB712B38F1C300E26254 /* AudioInfoState+PlaybackSpeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioInfoState+PlaybackSpeed.swift"; sourceTree = "<group>"; };
+		ED90EB732B38F23000E26254 /* AudioInfoState+Slider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioInfoState+Slider.swift"; sourceTree = "<group>"; };
+		ED90EB752B38F31C00E26254 /* BookDetailsReducerState+Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookDetailsReducerState+Audio.swift"; sourceTree = "<group>"; };
+		ED90EB772B38F36700E26254 /* BookDetailsReducer+AudioInfoState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookDetailsReducer+AudioInfoState.swift"; sourceTree = "<group>"; };
+		ED90EB792B38F42000E26254 /* BookDetailsReducer+PlayerAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookDetailsReducer+PlayerAction.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,6 +200,7 @@
 				ED90EB632B38E03A00E26254 /* Playlist.swift */,
 				ED90EB652B38E04D00E26254 /* Audio.swift */,
 				ED90EB672B38E09F00E26254 /* FileType.swift */,
+				ED90EB6F2B38F12E00E26254 /* PlayerState.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -195,6 +208,7 @@
 		ED90EB282B36F68300E26254 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				ED90EB7B2B38F71B00E26254 /* Player */,
 				ED90EB692B38E13800E26254 /* Extensions */,
 				ED90EB3A2B36FE8B00E26254 /* LaunchFeature */,
 			);
@@ -222,6 +236,7 @@
 			isa = PBXGroup;
 			children = (
 				ED90EB5A2B372A2800E26254 /* Repository */,
+				ED90EB6C2B38F11100E26254 /* Domain */,
 				ED90EB422B370FC400E26254 /* BookDetailsView.swift */,
 				ED90EB5D2B372EB700E26254 /* BookDetailsReducer.swift */,
 			);
@@ -248,7 +263,6 @@
 			isa = PBXGroup;
 			children = (
 				ED90EB5B2B372A3F00E26254 /* BookDetailsRepository.swift */,
-				ED90EB612B3772DE00E26254 /* AudioPlayerClient.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -259,6 +273,26 @@
 				ED90EB6A2B38E14900E26254 /* TimeInterval+Extensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		ED90EB6C2B38F11100E26254 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				ED90EB712B38F1C300E26254 /* AudioInfoState+PlaybackSpeed.swift */,
+				ED90EB732B38F23000E26254 /* AudioInfoState+Slider.swift */,
+				ED90EB752B38F31C00E26254 /* BookDetailsReducerState+Audio.swift */,
+				ED90EB772B38F36700E26254 /* BookDetailsReducer+AudioInfoState.swift */,
+				ED90EB792B38F42000E26254 /* BookDetailsReducer+PlayerAction.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		ED90EB7B2B38F71B00E26254 /* Player */ = {
+			isa = PBXGroup;
+			children = (
+				ED90EB612B3772DE00E26254 /* AudioPlayerClient.swift */,
+			);
+			path = Player;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -409,15 +443,21 @@
 				ED90EB352B36FC4100E26254 /* RootView.swift in Sources */,
 				ED90EB622B3772DE00E26254 /* AudioPlayerClient.swift in Sources */,
 				ED90EB272B36F5B800E26254 /* Book.swift in Sources */,
+				ED90EB742B38F23000E26254 /* AudioInfoState+Slider.swift in Sources */,
+				ED90EB7A2B38F42000E26254 /* BookDetailsReducer+PlayerAction.swift in Sources */,
 				ED90EB2A2B36F68F00E26254 /* LaunchView.swift in Sources */,
 				ED90EB5C2B372A3F00E26254 /* BookDetailsRepository.swift in Sources */,
+				ED90EB782B38F36700E26254 /* BookDetailsReducer+AudioInfoState.swift in Sources */,
 				ED90EB682B38E09F00E26254 /* FileType.swift in Sources */,
+				ED90EB762B38F31C00E26254 /* BookDetailsReducerState+Audio.swift in Sources */,
 				ED90EB662B38E04D00E26254 /* Audio.swift in Sources */,
 				ED90EAFB2B36F52300E26254 /* HeadwayApp.swift in Sources */,
 				ED90EB432B370FC500E26254 /* BookDetailsView.swift in Sources */,
 				ED90EB6B2B38E14900E26254 /* TimeInterval+Extensions.swift in Sources */,
+				ED90EB702B38F12E00E26254 /* PlayerState.swift in Sources */,
 				ED90EB372B36FC4D00E26254 /* RootReducer.swift in Sources */,
 				ED90EB5E2B372EB700E26254 /* BookDetailsReducer.swift in Sources */,
+				ED90EB722B38F1C300E26254 /* AudioInfoState+PlaybackSpeed.swift in Sources */,
 				ED90EB642B38E03A00E26254 /* Playlist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
