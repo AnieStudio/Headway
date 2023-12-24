@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct HeadwayApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            RootView(
+                store: Store(initialState: RootReducer.State()) { RootReducer() }
+            )
         }
     }
 }

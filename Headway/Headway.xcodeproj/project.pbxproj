@@ -8,12 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		ED90EAFB2B36F52300E26254 /* HeadwayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EAFA2B36F52300E26254 /* HeadwayApp.swift */; };
-		ED90EAFD2B36F52300E26254 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EAFC2B36F52300E26254 /* ContentView.swift */; };
 		ED90EAFF2B36F52400E26254 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED90EAFE2B36F52400E26254 /* Assets.xcassets */; };
 		ED90EB022B36F52400E26254 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ED90EB012B36F52400E26254 /* Preview Assets.xcassets */; };
 		ED90EB0C2B36F52400E26254 /* HeadwayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB0B2B36F52400E26254 /* HeadwayTests.swift */; };
 		ED90EB162B36F52400E26254 /* HeadwayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB152B36F52400E26254 /* HeadwayUITests.swift */; };
 		ED90EB182B36F52400E26254 /* HeadwayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB172B36F52400E26254 /* HeadwayUITestsLaunchTests.swift */; };
+		ED90EB272B36F5B800E26254 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB262B36F5B800E26254 /* Book.swift */; };
+		ED90EB2A2B36F68F00E26254 /* LaunchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB292B36F68F00E26254 /* LaunchView.swift */; };
+		ED90EB322B36FB2800E26254 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = ED90EB312B36FB2800E26254 /* ComposableArchitecture */; };
+		ED90EB352B36FC4100E26254 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB342B36FC4100E26254 /* RootView.swift */; };
+		ED90EB372B36FC4D00E26254 /* RootReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB362B36FC4D00E26254 /* RootReducer.swift */; };
+		ED90EB432B370FC500E26254 /* BookDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB422B370FC400E26254 /* BookDetailsView.swift */; };
+		ED90EB512B3729E700E26254 /* 1.chapter_1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED90EB482B3729E600E26254 /* 1.chapter_1.mp3 */; };
+		ED90EB522B3729E700E26254 /* 1.chapter_5.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED90EB492B3729E600E26254 /* 1.chapter_5.mp3 */; };
+		ED90EB532B3729E700E26254 /* 1.chapter_7.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED90EB4A2B3729E700E26254 /* 1.chapter_7.mp3 */; };
+		ED90EB542B3729E700E26254 /* 1.chapter_8.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED90EB4B2B3729E700E26254 /* 1.chapter_8.mp3 */; };
+		ED90EB552B3729E700E26254 /* 1.introduction_0.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED90EB4C2B3729E700E26254 /* 1.introduction_0.mp3 */; };
+		ED90EB562B3729E700E26254 /* 1.chapter_6.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED90EB4D2B3729E700E26254 /* 1.chapter_6.mp3 */; };
+		ED90EB572B3729E700E26254 /* 1.chapter_2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED90EB4E2B3729E700E26254 /* 1.chapter_2.mp3 */; };
+		ED90EB582B3729E700E26254 /* 1.chapter_3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED90EB4F2B3729E700E26254 /* 1.chapter_3.mp3 */; };
+		ED90EB592B3729E700E26254 /* 1.chapter_4.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = ED90EB502B3729E700E26254 /* 1.chapter_4.mp3 */; };
+		ED90EB5C2B372A3F00E26254 /* BookDetailsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB5B2B372A3F00E26254 /* BookDetailsRepository.swift */; };
+		ED90EB5E2B372EB700E26254 /* BookDetailsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB5D2B372EB700E26254 /* BookDetailsReducer.swift */; };
+		ED90EB622B3772DE00E26254 /* AudioPlayerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB612B3772DE00E26254 /* AudioPlayerClient.swift */; };
+		ED90EB642B38E03A00E26254 /* Playlist.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB632B38E03A00E26254 /* Playlist.swift */; };
+		ED90EB662B38E04D00E26254 /* Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB652B38E04D00E26254 /* Audio.swift */; };
+		ED90EB682B38E09F00E26254 /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB672B38E09F00E26254 /* FileType.swift */; };
+		ED90EB6B2B38E14900E26254 /* TimeInterval+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB6A2B38E14900E26254 /* TimeInterval+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +57,6 @@
 /* Begin PBXFileReference section */
 		ED90EAF72B36F52300E26254 /* Headway.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Headway.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED90EAFA2B36F52300E26254 /* HeadwayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadwayApp.swift; sourceTree = "<group>"; };
-		ED90EAFC2B36F52300E26254 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ED90EAFE2B36F52400E26254 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ED90EB012B36F52400E26254 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ED90EB072B36F52400E26254 /* HeadwayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeadwayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +64,27 @@
 		ED90EB112B36F52400E26254 /* HeadwayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HeadwayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED90EB152B36F52400E26254 /* HeadwayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadwayUITests.swift; sourceTree = "<group>"; };
 		ED90EB172B36F52400E26254 /* HeadwayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadwayUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		ED90EB262B36F5B800E26254 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		ED90EB292B36F68F00E26254 /* LaunchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchView.swift; sourceTree = "<group>"; };
+		ED90EB342B36FC4100E26254 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		ED90EB362B36FC4D00E26254 /* RootReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootReducer.swift; sourceTree = "<group>"; };
+		ED90EB422B370FC400E26254 /* BookDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsView.swift; sourceTree = "<group>"; };
+		ED90EB482B3729E600E26254 /* 1.chapter_1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.chapter_1.mp3; sourceTree = "<group>"; };
+		ED90EB492B3729E600E26254 /* 1.chapter_5.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.chapter_5.mp3; sourceTree = "<group>"; };
+		ED90EB4A2B3729E700E26254 /* 1.chapter_7.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.chapter_7.mp3; sourceTree = "<group>"; };
+		ED90EB4B2B3729E700E26254 /* 1.chapter_8.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.chapter_8.mp3; sourceTree = "<group>"; };
+		ED90EB4C2B3729E700E26254 /* 1.introduction_0.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.introduction_0.mp3; sourceTree = "<group>"; };
+		ED90EB4D2B3729E700E26254 /* 1.chapter_6.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.chapter_6.mp3; sourceTree = "<group>"; };
+		ED90EB4E2B3729E700E26254 /* 1.chapter_2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.chapter_2.mp3; sourceTree = "<group>"; };
+		ED90EB4F2B3729E700E26254 /* 1.chapter_3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.chapter_3.mp3; sourceTree = "<group>"; };
+		ED90EB502B3729E700E26254 /* 1.chapter_4.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = 1.chapter_4.mp3; sourceTree = "<group>"; };
+		ED90EB5B2B372A3F00E26254 /* BookDetailsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsRepository.swift; sourceTree = "<group>"; };
+		ED90EB5D2B372EB700E26254 /* BookDetailsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsReducer.swift; sourceTree = "<group>"; };
+		ED90EB612B3772DE00E26254 /* AudioPlayerClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayerClient.swift; sourceTree = "<group>"; };
+		ED90EB632B38E03A00E26254 /* Playlist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Playlist.swift; sourceTree = "<group>"; };
+		ED90EB652B38E04D00E26254 /* Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Audio.swift; sourceTree = "<group>"; };
+		ED90EB672B38E09F00E26254 /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
+		ED90EB6A2B38E14900E26254 /* TimeInterval+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TimeInterval+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +92,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED90EB322B36FB2800E26254 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +136,11 @@
 		ED90EAF92B36F52300E26254 /* Headway */ = {
 			isa = PBXGroup;
 			children = (
+				ED90EB442B37299600E26254 /* Materials */,
+				ED90EB282B36F68300E26254 /* Common */,
+				ED90EB252B36F5A600E26254 /* Domain */,
+				ED90EB242B36F59200E26254 /* Features */,
 				ED90EAFA2B36F52300E26254 /* HeadwayApp.swift */,
-				ED90EAFC2B36F52300E26254 /* ContentView.swift */,
 				ED90EAFE2B36F52400E26254 /* Assets.xcassets */,
 				ED90EB002B36F52400E26254 /* Preview Content */,
 			);
@@ -127,6 +172,95 @@
 			path = HeadwayUITests;
 			sourceTree = "<group>";
 		};
+		ED90EB242B36F59200E26254 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				ED90EB412B370FB400E26254 /* BookDetails */,
+				ED90EB332B36FC3600E26254 /* Root */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		ED90EB252B36F5A600E26254 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				ED90EB262B36F5B800E26254 /* Book.swift */,
+				ED90EB632B38E03A00E26254 /* Playlist.swift */,
+				ED90EB652B38E04D00E26254 /* Audio.swift */,
+				ED90EB672B38E09F00E26254 /* FileType.swift */,
+			);
+			path = Domain;
+			sourceTree = "<group>";
+		};
+		ED90EB282B36F68300E26254 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				ED90EB692B38E13800E26254 /* Extensions */,
+				ED90EB3A2B36FE8B00E26254 /* LaunchFeature */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		ED90EB332B36FC3600E26254 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				ED90EB342B36FC4100E26254 /* RootView.swift */,
+				ED90EB362B36FC4D00E26254 /* RootReducer.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		ED90EB3A2B36FE8B00E26254 /* LaunchFeature */ = {
+			isa = PBXGroup;
+			children = (
+				ED90EB292B36F68F00E26254 /* LaunchView.swift */,
+			);
+			path = LaunchFeature;
+			sourceTree = "<group>";
+		};
+		ED90EB412B370FB400E26254 /* BookDetails */ = {
+			isa = PBXGroup;
+			children = (
+				ED90EB5A2B372A2800E26254 /* Repository */,
+				ED90EB422B370FC400E26254 /* BookDetailsView.swift */,
+				ED90EB5D2B372EB700E26254 /* BookDetailsReducer.swift */,
+			);
+			path = BookDetails;
+			sourceTree = "<group>";
+		};
+		ED90EB442B37299600E26254 /* Materials */ = {
+			isa = PBXGroup;
+			children = (
+				ED90EB482B3729E600E26254 /* 1.chapter_1.mp3 */,
+				ED90EB4E2B3729E700E26254 /* 1.chapter_2.mp3 */,
+				ED90EB4F2B3729E700E26254 /* 1.chapter_3.mp3 */,
+				ED90EB502B3729E700E26254 /* 1.chapter_4.mp3 */,
+				ED90EB492B3729E600E26254 /* 1.chapter_5.mp3 */,
+				ED90EB4D2B3729E700E26254 /* 1.chapter_6.mp3 */,
+				ED90EB4A2B3729E700E26254 /* 1.chapter_7.mp3 */,
+				ED90EB4B2B3729E700E26254 /* 1.chapter_8.mp3 */,
+				ED90EB4C2B3729E700E26254 /* 1.introduction_0.mp3 */,
+			);
+			path = Materials;
+			sourceTree = "<group>";
+		};
+		ED90EB5A2B372A2800E26254 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				ED90EB5B2B372A3F00E26254 /* BookDetailsRepository.swift */,
+				ED90EB612B3772DE00E26254 /* AudioPlayerClient.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		ED90EB692B38E13800E26254 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				ED90EB6A2B38E14900E26254 /* TimeInterval+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -143,6 +277,9 @@
 			dependencies = (
 			);
 			name = Headway;
+			packageProductDependencies = (
+				ED90EB312B36FB2800E26254 /* ComposableArchitecture */,
+			);
 			productName = Headway;
 			productReference = ED90EAF72B36F52300E26254 /* Headway.app */;
 			productType = "com.apple.product-type.application";
@@ -215,6 +352,9 @@
 				Base,
 			);
 			mainGroup = ED90EAEE2B36F52300E26254;
+			packageReferences = (
+				ED90EB302B36FB2800E26254 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+			);
 			productRefGroup = ED90EAF82B36F52300E26254 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -231,8 +371,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED90EB552B3729E700E26254 /* 1.introduction_0.mp3 in Resources */,
+				ED90EB522B3729E700E26254 /* 1.chapter_5.mp3 in Resources */,
+				ED90EB532B3729E700E26254 /* 1.chapter_7.mp3 in Resources */,
 				ED90EB022B36F52400E26254 /* Preview Assets.xcassets in Resources */,
+				ED90EB562B3729E700E26254 /* 1.chapter_6.mp3 in Resources */,
+				ED90EB582B3729E700E26254 /* 1.chapter_3.mp3 in Resources */,
 				ED90EAFF2B36F52400E26254 /* Assets.xcassets in Resources */,
+				ED90EB542B3729E700E26254 /* 1.chapter_8.mp3 in Resources */,
+				ED90EB572B3729E700E26254 /* 1.chapter_2.mp3 in Resources */,
+				ED90EB592B3729E700E26254 /* 1.chapter_4.mp3 in Resources */,
+				ED90EB512B3729E700E26254 /* 1.chapter_1.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,8 +406,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED90EAFD2B36F52300E26254 /* ContentView.swift in Sources */,
+				ED90EB352B36FC4100E26254 /* RootView.swift in Sources */,
+				ED90EB622B3772DE00E26254 /* AudioPlayerClient.swift in Sources */,
+				ED90EB272B36F5B800E26254 /* Book.swift in Sources */,
+				ED90EB2A2B36F68F00E26254 /* LaunchView.swift in Sources */,
+				ED90EB5C2B372A3F00E26254 /* BookDetailsRepository.swift in Sources */,
+				ED90EB682B38E09F00E26254 /* FileType.swift in Sources */,
+				ED90EB662B38E04D00E26254 /* Audio.swift in Sources */,
 				ED90EAFB2B36F52300E26254 /* HeadwayApp.swift in Sources */,
+				ED90EB432B370FC500E26254 /* BookDetailsView.swift in Sources */,
+				ED90EB6B2B38E14900E26254 /* TimeInterval+Extensions.swift in Sources */,
+				ED90EB372B36FC4D00E26254 /* RootReducer.swift in Sources */,
+				ED90EB5E2B372EB700E26254 /* BookDetailsReducer.swift in Sources */,
+				ED90EB642B38E03A00E26254 /* Playlist.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,11 +585,12 @@
 				DEVELOPMENT_TEAM = BB7GUX577N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Headway;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,9 +598,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.glebserediuk.Headway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -454,11 +618,12 @@
 				DEVELOPMENT_TEAM = BB7GUX577N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Headway;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -466,9 +631,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.glebserediuk.Headway;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -588,6 +756,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ED90EB302B36FB2800E26254 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = exactVersion;
+				version = 1.5.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ED90EB312B36FB2800E26254 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED90EB302B36FB2800E26254 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = ED90EAEF2B36F52300E26254 /* Project object */;
 }
