@@ -50,10 +50,9 @@ struct BookDetailsView: View {
                                     .font(.caption)
                                     .foregroundStyle(.gray)
                                     .frame(width: screen.size.width * 0.1)
-                                //isOn: viewStore.binding(get: { $0.toggleIsOn }, send: BindingBasicsAction.toggleChange)
                                 
                                 Slider(
-                                    value: viewStore.binding(get: { $0.audioInfoState.currentSliderValue }, send: BookDetailsReducer.Action.updateProgress),
+                                    value: viewStore.binding(get: { Float($0.audioInfoState.sliderValue) }, send: BookDetailsReducer.Action.updateProgress),
                                     in: viewStore.audioInfoState.sliderStep
                                 )
                                 .progressViewStyle(.linear)
