@@ -12,7 +12,11 @@ import ComposableArchitecture
 struct PlayerControlsReducer: Reducer {
     @Dependency(\.continuousClock) private var clock
     @Dependency(\.audioPlayer) private var audioPlayer
-    @Dependency(\.bookDetailsRepository) private var bookDetailsRepository
+    
+    private enum Constant {
+        static let rewindBackTime: Double = 5
+        static let rewindForwardTime: Double = 10
+    }
     
     private enum CancelID {
         case play
@@ -20,10 +24,13 @@ struct PlayerControlsReducer: Reducer {
     }
     
     struct State: Equatable {
-        var bookID: Book.Identifier
-        var book: Book = .empty
+        var book: Book
         var playerState: PlayerState = .pause
         var audioInfoState: AudioInfoState = .empty
+        var shouldPresentText: Bool = false
+        var urlsCount: Int {
+            book.playlist.audio.count - 1
+        }
     }
     
     enum Action: Equatable {
@@ -32,11 +39,10 @@ struct PlayerControlsReducer: Reducer {
         case updateCurrentAudioTime
         case updateSliderProgress(Float)
         case getTotalDuration(TimeInterval)
-        
-        case bookFetched(Book)
+        case showText
+        case hideText
         case playerAction(PlayerAction)
     }
-    
     
     var body: some Reducer<State, Action> {
         let defaultCalncelEffects: [Effect<PlayerControlsReducer.Action>] = [
@@ -47,18 +53,9 @@ struct PlayerControlsReducer: Reducer {
         Reduce { state, action in
             switch action {
             case .onAppear:
-                let id = state.bookID
                 
-                return .run { send in
-                    let book = try await bookDetailsRepository.book(id)
-                    await send(.bookFetched(book))
-                }
-            case let .bookFetched(book):
-                state.book = book
-                let index = state.audioInfoState.currentAudioIndex
-                
-                return .run { send in
-                    let duration = try await audioPlayer.totalDuration(book.urls[index])
+                return .run { [url = state.book.urls[state.audioInfoState.currentAudioIndex]] send in
+                    let duration = try await audioPlayer.totalDuration(url)
                     await send(.getTotalDuration(duration))
                 }
             case let .playerAction(action):
@@ -92,6 +89,7 @@ struct PlayerControlsReducer: Reducer {
                     
                     state.audioInfoState.currentAudioIndex -= 1
                     state.audioInfoState.currentTime = 0
+                    state.audioInfoState.totalDuration = 0
                     
                     playIfNeeded(state, &effects)
                     
@@ -108,16 +106,18 @@ struct PlayerControlsReducer: Reducer {
                     )
                     state.audioInfoState.currentAudioIndex += 1
                     state.audioInfoState.currentTime = 0
+                    state.audioInfoState.totalDuration = 0
                     
                     playIfNeeded(state, &effects)
                     return .merge(effects)
                     
                 case .rewindBack:
                     guard state.audioInfoState.currentTime != 0 else { return .none }
-                    if state.audioInfoState.currentTime <= 5 {
+                    if state.audioInfoState.currentTime <= Constant.rewindBackTime {
                         state.audioInfoState.currentTime = 0
+                        
                     } else {
-                        state.audioInfoState.currentTime -= 5
+                        state.audioInfoState.currentTime -= Constant.rewindBackTime
                     }
                     
                     var effects = defaultCalncelEffects
@@ -126,10 +126,10 @@ struct PlayerControlsReducer: Reducer {
                 case .rewindForward:
                     guard state.audioInfoState.currentTime <= state.audioInfoState.totalDuration else { return .none }
                     
-                    if state.audioInfoState.currentTime >= (state.audioInfoState.totalDuration - 10) {
+                    if state.audioInfoState.currentTime >= (state.audioInfoState.totalDuration - Constant.rewindForwardTime) {
                         state.audioInfoState.currentTime = state.audioInfoState.totalDuration
                     } else {
-                        state.audioInfoState.currentTime += 10
+                        state.audioInfoState.currentTime += Constant.rewindForwardTime
                     }
                     
                     var effects = defaultCalncelEffects
@@ -160,7 +160,9 @@ struct PlayerControlsReducer: Reducer {
                     
                     state.audioInfoState.currentAudioIndex += 1
                     state.audioInfoState.currentTime = 0
-
+                    state.audioInfoState.totalDuration = 0
+                    
+                    state.playerState = .pause
                     effects.append(
                         .run { [url = state.book.urls[state.audioInfoState.currentAudioIndex]] send in
                             let duration = try await audioPlayer.totalDuration(url)
@@ -201,6 +203,12 @@ struct PlayerControlsReducer: Reducer {
                 .cancellable(id: CancelID.timer, cancelInFlight: true)
             case let .getTotalDuration(duration):
                 state.audioInfoState.totalDuration = duration
+                return .none
+            case .showText:
+                state.shouldPresentText = true
+                return .none
+            case .hideText:
+                state.shouldPresentText = false
                 return .none
             }
         }

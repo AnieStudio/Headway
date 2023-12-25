@@ -15,7 +15,7 @@ struct BookDetailsRepository {
 
 extension BookDetailsRepository: DependencyKey {
     static var liveValue = BookDetailsRepository { id in
-        let previewID = "1.preview"
+        let previewID = "\(id).preview"
         let audio: [Audio] = [
             Audio(id: "1.introduction_0", notes: "Good habits produce results that multiply rapidly, just like money that grows whrough compound interest"),
             Audio(id: "1.chapter_1", notes: "Breaking a bad habit is an ardouos task"),

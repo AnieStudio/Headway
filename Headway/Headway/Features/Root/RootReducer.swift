@@ -9,8 +9,12 @@ import ComposableArchitecture
 import SwiftUI
 
 struct RootReducer: Reducer {
+    private enum Constant {
+        static let stubBookID = "1"
+    }
+    
     struct State: Equatable {
-        var detailsState = BookDetailsReducer.State(bookID: "1")
+        var detailsState = BookDetailsReducer.State(bookID: Constant.stubBookID)
     }
     
     enum Action: Equatable {
