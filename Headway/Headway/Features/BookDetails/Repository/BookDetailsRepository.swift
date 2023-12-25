@@ -27,7 +27,6 @@ extension BookDetailsRepository: DependencyKey {
             Audio(id: "1.chapter_7", notes: "Each living thing understands the world in its way and love undelayed rewards"),
             Audio(id: "1.chapter_8", notes: "The brain's response to enticning opportunities is immediate")
         ]
-
         let playlist: Playlist = .init(audio: audio)
         
         return Book(id: id, previewID: previewID, playlist: playlist)

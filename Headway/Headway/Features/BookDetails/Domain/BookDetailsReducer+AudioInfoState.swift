@@ -17,3 +17,14 @@ extension BookDetailsReducer.State {
         static let empty: Self = .init(currentTime: 0, totalDuration: 0)
     }
 }
+
+extension PlayerControlsReducer.State {
+    struct AudioInfoState: Equatable {
+        var currentAudioIndex: Int = 0
+        var currentTime: TimeInterval = 0
+        var totalDuration: TimeInterval = 0
+        var currentPlaybackSpeed: AudioPlayerClient.PlaybackSpeed = .normal
+        
+        static let empty: Self = .init(currentTime: 0, totalDuration: 0)
+    }
+}

@@ -12,9 +12,7 @@ import ComposableArchitecture
 struct HeadwayApp: App {
     var body: some Scene {
         WindowGroup {
-            RootView(
-                store: Store(initialState: RootReducer.State()) { RootReducer() }
-            )
+            RootView(store: Store(initialState: RootReducer.State()) { RootReducer() })
         }
     }
 }

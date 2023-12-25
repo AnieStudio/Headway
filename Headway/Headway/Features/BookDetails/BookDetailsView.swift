@@ -7,7 +7,6 @@
 
 import SwiftUI
 import ComposableArchitecture
-import AVFoundation
 
 struct BookDetailsView: View {
     let store: StoreOf<BookDetailsReducer>
@@ -87,7 +86,7 @@ struct BookDetailsView: View {
                                 HStack(spacing: screen.size.width * 0.085) {
                                     playerViewImage(store, "backward.end.fill", screen.size, .back, !viewStore.isFirstAudio)
                                         .frame(width: screen.size.width * 0.045, height: screen.size.height * 0.022)
-                                    playerViewImage(store, "gobackward.5", screen.size, .goBack5)
+                                    playerViewImage(store, "gobackward.5", screen.size, .rewindBack)
                                         .frame(width:screen.size.height * 0.028, height: screen.size.height * 0.03)
                                     if viewStore.playerState == .pause {
                                         playerViewImage(store, "play.fill", screen.size, .play)
@@ -96,7 +95,7 @@ struct BookDetailsView: View {
                                         playerViewImage(store, "pause.fill", screen.size, .pause)
                                             .frame(width: screen.size.width * 0.055, height: screen.size.height * 0.025)
                                     }
-                                    playerViewImage(store, "goforward.10",screen.size, .goForward10)
+                                    playerViewImage(store, "goforward.10",screen.size, .rewindForward)
                                         .frame(width:screen.size.height * 0.028, height: screen.size.height * 0.03)
                                     playerViewImage(store, "forward.end.fill",screen.size, .next, !viewStore.isLastAudio)
                                         .frame(width: screen.size.width * 0.045, height: screen.size.height * 0.022)
@@ -123,6 +122,8 @@ struct BookDetailsView: View {
                             }
                             .padding(.top, 20)
                             .frame(height: screen.size.height * 0.2)
+                            
+                            // Here player controls
                         }
                         .padding(.horizontal, 12)
                     }

@@ -11,8 +11,21 @@ extension BookDetailsReducer.Action {
         case pause
         case back
         case next
-        case goBack5
-        case goForward10
+        case rewindBack
+        case rewindForward
+        case changeSpeed
+        case didFinishPlaying
+    }
+}
+
+extension PlayerControlsReducer.Action {
+    enum PlayerAction: Equatable {
+        case play
+        case pause
+        case back
+        case next
+        case rewindBack
+        case rewindForward
         case changeSpeed
         case didFinishPlaying
     }

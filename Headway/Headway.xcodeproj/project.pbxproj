@@ -41,6 +41,9 @@
 		ED90EB762B38F31C00E26254 /* BookDetailsReducerState+Audio.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB752B38F31C00E26254 /* BookDetailsReducerState+Audio.swift */; };
 		ED90EB782B38F36700E26254 /* BookDetailsReducer+AudioInfoState.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB772B38F36700E26254 /* BookDetailsReducer+AudioInfoState.swift */; };
 		ED90EB7A2B38F42000E26254 /* BookDetailsReducer+PlayerAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB792B38F42000E26254 /* BookDetailsReducer+PlayerAction.swift */; };
+		ED90EB7D2B397D2400E26254 /* AudioPlayerClient+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB7C2B397D2400E26254 /* AudioPlayerClient+Extensions.swift */; };
+		ED90EB802B397E5200E26254 /* PlayerControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB7F2B397E5200E26254 /* PlayerControlsView.swift */; };
+		ED90EB822B397EC900E26254 /* PlayerControlsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED90EB812B397EC900E26254 /* PlayerControlsReducer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -97,6 +100,9 @@
 		ED90EB752B38F31C00E26254 /* BookDetailsReducerState+Audio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookDetailsReducerState+Audio.swift"; sourceTree = "<group>"; };
 		ED90EB772B38F36700E26254 /* BookDetailsReducer+AudioInfoState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookDetailsReducer+AudioInfoState.swift"; sourceTree = "<group>"; };
 		ED90EB792B38F42000E26254 /* BookDetailsReducer+PlayerAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BookDetailsReducer+PlayerAction.swift"; sourceTree = "<group>"; };
+		ED90EB7C2B397D2400E26254 /* AudioPlayerClient+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AudioPlayerClient+Extensions.swift"; sourceTree = "<group>"; };
+		ED90EB7F2B397E5200E26254 /* PlayerControlsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlsView.swift; sourceTree = "<group>"; };
+		ED90EB812B397EC900E26254 /* PlayerControlsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerControlsReducer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -235,6 +241,7 @@
 		ED90EB412B370FB400E26254 /* BookDetails */ = {
 			isa = PBXGroup;
 			children = (
+				ED90EB7E2B397E4000E26254 /* Subview */,
 				ED90EB5A2B372A2800E26254 /* Repository */,
 				ED90EB6C2B38F11100E26254 /* Domain */,
 				ED90EB422B370FC400E26254 /* BookDetailsView.swift */,
@@ -291,8 +298,18 @@
 			isa = PBXGroup;
 			children = (
 				ED90EB612B3772DE00E26254 /* AudioPlayerClient.swift */,
+				ED90EB7C2B397D2400E26254 /* AudioPlayerClient+Extensions.swift */,
 			);
 			path = Player;
+			sourceTree = "<group>";
+		};
+		ED90EB7E2B397E4000E26254 /* Subview */ = {
+			isa = PBXGroup;
+			children = (
+				ED90EB7F2B397E5200E26254 /* PlayerControlsView.swift */,
+				ED90EB812B397EC900E26254 /* PlayerControlsReducer.swift */,
+			);
+			path = Subview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,6 +459,7 @@
 			files = (
 				ED90EB352B36FC4100E26254 /* RootView.swift in Sources */,
 				ED90EB622B3772DE00E26254 /* AudioPlayerClient.swift in Sources */,
+				ED90EB802B397E5200E26254 /* PlayerControlsView.swift in Sources */,
 				ED90EB272B36F5B800E26254 /* Book.swift in Sources */,
 				ED90EB742B38F23000E26254 /* AudioInfoState+Slider.swift in Sources */,
 				ED90EB7A2B38F42000E26254 /* BookDetailsReducer+PlayerAction.swift in Sources */,
@@ -450,6 +468,7 @@
 				ED90EB782B38F36700E26254 /* BookDetailsReducer+AudioInfoState.swift in Sources */,
 				ED90EB682B38E09F00E26254 /* FileType.swift in Sources */,
 				ED90EB762B38F31C00E26254 /* BookDetailsReducerState+Audio.swift in Sources */,
+				ED90EB7D2B397D2400E26254 /* AudioPlayerClient+Extensions.swift in Sources */,
 				ED90EB662B38E04D00E26254 /* Audio.swift in Sources */,
 				ED90EAFB2B36F52300E26254 /* HeadwayApp.swift in Sources */,
 				ED90EB432B370FC500E26254 /* BookDetailsView.swift in Sources */,
@@ -459,6 +478,7 @@
 				ED90EB5E2B372EB700E26254 /* BookDetailsReducer.swift in Sources */,
 				ED90EB722B38F1C300E26254 /* AudioInfoState+PlaybackSpeed.swift in Sources */,
 				ED90EB642B38E03A00E26254 /* Playlist.swift in Sources */,
+				ED90EB822B397EC900E26254 /* PlayerControlsReducer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

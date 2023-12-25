@@ -13,8 +13,5 @@ struct RootView: View {
     
     var body: some View {
         BookDetailsView(store: store.scope(state: \.detailsState, action: RootReducer.Action.bookDetailsAction))
-//        LaunchView(
-//            store: store.scope(state: \.launchState, action: RootReducer.Action.launchAction)
-//        )
     }
 }

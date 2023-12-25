@@ -1,15 +1,15 @@
 //
-//  BookDetailsReducer.swift
+//  PlayerControlsReducer.swift
 //  Headway
 //
-//  Created by Hlib Serediuk-Personal on 23.12.2023.
+//  Created by Hlib Serediuk-Personal on 25.12.2023.
 //
 
+import Foundation
 import SwiftUI
 import ComposableArchitecture
-import Foundation
 
-struct BookDetailsReducer: Reducer {
+struct PlayerControlsReducer: Reducer {
     @Dependency(\.continuousClock) private var clock
     @Dependency(\.audioPlayer) private var audioPlayer
     @Dependency(\.bookDetailsRepository) private var bookDetailsRepository
@@ -37,8 +37,9 @@ struct BookDetailsReducer: Reducer {
         case playerAction(PlayerAction)
     }
     
+    
     var body: some Reducer<State, Action> {
-        let defaultCalncelEffects: [Effect<BookDetailsReducer.Action>] = [
+        let defaultCalncelEffects: [Effect<PlayerControlsReducer.Action>] = [
             .cancel(id: CancelID.play),
             .cancel(id: CancelID.timer)
         ]
@@ -206,11 +207,11 @@ struct BookDetailsReducer: Reducer {
     }
 }
 
-private extension BookDetailsReducer {
-    func playIfNeeded(_ state: BookDetailsReducer.State, _ effects: inout [Effect<BookDetailsReducer.Action>]) {
+private extension PlayerControlsReducer {
+    func playIfNeeded(_ state: PlayerControlsReducer.State, _ effects: inout [Effect<PlayerControlsReducer.Action>]) {
         guard state.playerState == .playing else { return }
         
-        let playEffect: Effect<BookDetailsReducer.Action> = .run { await $0(.playerAction(.play)) }
+        let playEffect: Effect<PlayerControlsReducer.Action> = .run { await $0(.playerAction(.play)) }
             .cancellable(id: CancelID.play, cancelInFlight: true)
         
         effects.append(playEffect)

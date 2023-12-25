@@ -14,3 +14,13 @@ extension BookDetailsReducer.State.AudioInfoState {
         AudioPlayerClient.PlaybackSpeed.allCases.firstIndex(of: currentPlaybackSpeed) ?? 2
     }
 }
+
+extension PlayerControlsReducer.State.AudioInfoState {
+    var currentPlaybackSpeedDescr: String {
+        currentPlaybackSpeed.description
+    }
+    
+    var currentPlaybackSpeedIndex: Int {
+        AudioPlayerClient.PlaybackSpeed.allCases.firstIndex(of: currentPlaybackSpeed) ?? 2
+    }
+}
