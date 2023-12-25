@@ -61,7 +61,7 @@ extension AudioPlayerClient: DependencyKey {
                     delegate.player.currentTime = time
                     delegate.player.enableRate = true
                     delegate.player.rate = speed.rawValue
-                    print("---> Speed \(speed.rawValue)")
+                    
                     delegate.player.prepareToPlay()
                     delegate.player.play()
                 }
@@ -95,17 +95,6 @@ private final class Delegate: NSObject, AVAudioPlayerDelegate {
     
     init(url: URL) throws {
         self.player = try AVAudioPlayer(contentsOf: url)
-        super.init()
-        self.player.delegate = self
-        print("---> delegate init ")
-    }
-    
-    deinit {
-        print("---> delegate Deinit ")
-    }
-    
-    override init() {
-        self.player = AVAudioPlayer()
         super.init()
         self.player.delegate = self
     }

@@ -89,13 +89,7 @@ struct BookDetailsReducer: Reducer {
                     state.audioInfoState.currentAudioIndex -= 1
                     state.audioInfoState.currentTime = 0
                     
-                    if state.playerState == .playing {
-                        effects.append(
-                            .run { send in
-                                await send(.playerAction(.play))
-                            }.cancellable(id: CancelID.play, cancelInFlight: true)
-                        )
-                    }
+                    playIfNeeded(state, &effects)
                     return .merge(effects)
                 case .next:
                     guard !state.isLastAudio else { return .none }
@@ -110,13 +104,7 @@ struct BookDetailsReducer: Reducer {
                     state.audioInfoState.currentAudioIndex += 1
                     state.audioInfoState.currentTime = 0
                     
-                    if state.playerState == .playing {
-                        effects.append(
-                            .run { send in
-                                await send(.playerAction(.play))
-                            }.cancellable(id: CancelID.play, cancelInFlight: true)
-                        )
-                    }
+                    playIfNeeded(state, &effects)
                     return .merge(effects)
                     
                 case .goBack5:
@@ -127,15 +115,8 @@ struct BookDetailsReducer: Reducer {
                         state.audioInfoState.currentTime -= 5
                     }
                     
-                    print("--->  timer \(state.audioInfoState.currentTime)")
                     var effects = defaultCalncelEffects
-                    if state.playerState == .playing {
-                        effects.append(
-                            .run { send in
-                                await send(.playerAction(.play))
-                            }.cancellable(id: CancelID.play, cancelInFlight: true)
-                        )
-                    }
+                    playIfNeeded(state, &effects)
                     return .merge(effects)
                 case .goForward10:
                     guard state.audioInfoState.currentTime <= state.audioInfoState.totalDuration else { return .none }
@@ -145,15 +126,9 @@ struct BookDetailsReducer: Reducer {
                     } else {
                         state.audioInfoState.currentTime += 10
                     }
-
+                    
                     var effects = defaultCalncelEffects
-                    if state.playerState == .playing {
-                        effects.append(
-                            .run { send in
-                                await send(.playerAction(.play))
-                            }.cancellable(id: CancelID.play, cancelInFlight: true)
-                        )
-                    }
+                    playIfNeeded(state, &effects)
                     
                     return .merge(effects)
                 case .changeSpeed:
@@ -202,7 +177,7 @@ struct BookDetailsReducer: Reducer {
                 if state.audioInfoState.currentTime >= state.audioInfoState.totalDuration {
                     return .send(.playerAction(.didFinishPlaying))
                 }
-
+                
                 return .none
             case let .updateSliderProgress(time):
                 state.audioInfoState.sliderValue = Double(time)
@@ -213,7 +188,7 @@ struct BookDetailsReducer: Reducer {
                         .run { send in await send(.playerAction(.play)) }
                     )
                 }
-
+                
                 return .none
             case .startTimer:
                 return .run(priority: .high) { send in
@@ -227,5 +202,16 @@ struct BookDetailsReducer: Reducer {
                 return .none
             }
         }
+    }
+}
+
+private extension BookDetailsReducer {
+    func playIfNeeded(_ state: BookDetailsReducer.State, _ effects: inout [Effect<BookDetailsReducer.Action>]) {
+        guard state.playerState == .playing else { return }
+        
+        let playEffect: Effect<BookDetailsReducer.Action> = .run { await $0(.playerAction(.play)) }
+            .cancellable(id: CancelID.play, cancelInFlight: true)
+        
+        effects.append(playEffect)
     }
 }
