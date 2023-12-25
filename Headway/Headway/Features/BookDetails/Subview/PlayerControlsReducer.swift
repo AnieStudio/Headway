@@ -68,6 +68,7 @@ struct PlayerControlsReducer: Reducer {
                     return .run(priority: .high) { [url = state.book.urls[state.audioInfoState.currentAudioIndex]] send in
                         await send(.startTimer)
                         
+                        // TODO: recheck and handle error 
                         _ = try await audioPlayer.control(url, .play(time, speed))
                     }
                     .cancellable(id: CancelID.play, cancelInFlight: true)
